@@ -36,8 +36,8 @@ function routeRequest()
             $commentsDecoded = json_decode($comments, true);
             $commentsDecoded[] = [
                 'id'      => round(microtime(true) * 1000),
-                'author'  => $_POST['author'],
-                'text'    => $_POST['text']
+                'author'  => $_GET['author'],
+                'text'    => $_GET['text']
             ];
 
             $comments = json_encode($commentsDecoded, JSON_PRETTY_PRINT);
